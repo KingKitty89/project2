@@ -1,0 +1,68 @@
+body    {
+    background-color: black;
+    font-family: Helvetica, sans-serif;
+}
+
+.navbar-brand {
+    display: block;
+    width: 100%;
+}
+
+#landing    {
+display: flex;
+}
+
+#whiskey    {
+    width: 50%;
+    text-align: center;
+}
+
+#whiskeyimg    {
+width: 100%;
+/* object-fit: contain; */
+height: 100%;
+z-index: 0;
+}
+
+#wine    {
+    width: 50%;
+    text-align: center;
+}
+
+#wineimg    {
+    object-fit: contain;
+    width: 100%;
+    z-index: 0;
+}
+
+a   {
+    color: white;
+    font-size: 40px;
+    z-index: 50;
+    
+}
+
+a:hover {
+    text-decoration: none;
+    color: black;
+}
+
+button  {
+    padding: 10px;
+}
+
+button:hover {
+    background-color: black;
+}
+
+#whiskeylink    {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+}
+
+#winelink    {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+}
