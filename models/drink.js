@@ -7,10 +7,6 @@ module.exports = (sequelize, DataTypes) => {
      * This method is not a part of Sequelize lifecycle.
      * The `models/index` file will call this method automatically.
      */
-    static associate() {
-      //models
-      // define association here
-    }
   }
   Drink.init(
     {
@@ -26,5 +22,16 @@ module.exports = (sequelize, DataTypes) => {
       modelName: "Drink"
     }
   );
+
+  Drink.associate = function(models) {
+    Drink.hasMany(models.Taste, {
+      foreignKey: "tasteId"
+    });
+    models.Taste.belongsTo(Drink);
+    Drink.hasMany(models.Aroma, {
+      foreignKey: "aromaId"
+    });
+    models.Aroma.belongsTo(Drink);
+  };
   return Drink;
 };
