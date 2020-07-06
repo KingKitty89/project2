@@ -1,7 +1,7 @@
 // Requiring path to so we can use relative routes to our HTML files
 const path = require("path");
 const db = require("../models/index.js");
-//different pages for taste and aroma?
+//different pages for taste and aroma??
 
 module.exports = function(app) {
   app.get("/", (req, res) => {
