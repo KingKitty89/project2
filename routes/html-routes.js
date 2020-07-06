@@ -1,29 +1,25 @@
 // Requiring path to so we can use relative routes to our HTML files
 const path = require("path");
-
-// Requiring our custom middleware for checking if a user is logged in
-const isAuthenticated = require("../config/middleware/isAuthenticated");
+//different pages for taste and aroma?
 
 module.exports = function(app) {
   app.get("/", (req, res) => {
-    // If the user already has an account send them to the members page
-    if (req.user) {
-      res.redirect("/members");
-    }
-    res.sendFile(path.join(__dirname, "../public/signup.html"));
+    res.sendFile(path.join(__dirname, "../public/index.html"));
   });
 
-  app.get("/login", (req, res) => {
-    // If the user already has an account send them to the members page
-    if (req.user) {
-      res.redirect("/members");
-    }
-    res.sendFile(path.join(__dirname, "../public/login.html"));
+  app.get("/bourbon", (req, res) => {
+    res.sendFile(path.join(__dirname, "../public/bourbon.html"));
   });
 
-  // Here we've add our isAuthenticated middleware to this route.
-  // If a user who is not logged in tries to access this route they will be redirected to the signup page
-  app.get("/members", isAuthenticated, (req, res) => {
-    res.sendFile(path.join(__dirname, "../public/members.html"));
+  app.get("/wine", (req, res) => {
+    res.sendFile(path.join(__dirname, "../public/wine.html"));
+  });
+
+  app.get("/bourbon-results", (req, res) => {
+    res.sendFile(path.join(__dirname, "../public/bourbon-results.html"));
+  });
+
+  app.get("/wine-results", (req, res) => {
+    res.sendFile(path.join(__dirname, "../public/wine-results.html"));
   });
 };
