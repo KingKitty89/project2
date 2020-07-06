@@ -6,7 +6,14 @@ module.exports = function(app) {
     db.Bourbon.findAll({
       where: {
         aroma: req.params.aroma
-      }
+      },
+      include: [
+        {
+          model: db.Aroma,
+          attributes: ["name"],
+          required: true
+        }
+      ]
     })
       .then(dbBourbon => {
         res.json(dbBourbon);
@@ -20,7 +27,14 @@ module.exports = function(app) {
     db.Bourbon.findAll({
       where: {
         taste: req.params.taste
-      }
+      },
+      include: [
+        {
+          model: db.Taste,
+          attributes: ["name"],
+          required: true
+        }
+      ]
     })
       .then(dbBourbon => {
         res.json(dbBourbon);
@@ -34,7 +48,14 @@ module.exports = function(app) {
     db.Wine.findAll({
       where: {
         aroma: req.params.aroma
-      }
+      },
+      include: [
+        {
+          model: db.Aroma,
+          attributes: ["name"],
+          required: true
+        }
+      ]
     })
       .then(dbWine => {
         res.json(dbWine);
@@ -48,7 +69,14 @@ module.exports = function(app) {
     db.Wine.findAll({
       where: {
         taste: req.params.taste
-      }
+      },
+      include: [
+        {
+          model: db.Tatse,
+          attributes: ["name"],
+          required: true
+        }
+      ]
     })
       .then(dbWine => {
         res.json(dbWine);
