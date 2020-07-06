@@ -20,6 +20,6 @@ module.exports = (sequelize, DataTypes) => {
   );
   Aroma.associate = function(models) {
     Aroma.belongsTo(models.Drink);
-  }
+  };
   return Aroma;
 };
