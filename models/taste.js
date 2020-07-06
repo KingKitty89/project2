@@ -14,10 +14,8 @@ module.exports = (sequelize, DataTypes) => {
   }
   Taste.init(
     {
-      Sweet: DataTypes.STRING,
-      FruitOrFloral: DataTypes.STRING,
-      Spicy: DataTypes.STRING,
-      Grain: DataTypes.STRING
+      name: DataTypes.STRING,
+      description: DataTypes.TEXT
     },
     {
       sequelize,
