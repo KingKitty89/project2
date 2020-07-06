@@ -24,14 +24,8 @@ module.exports = (sequelize, DataTypes) => {
   );
 
   Drink.associate = function(models) {
-    Drink.hasMany(models.Taste, {
-      foreignKey: "tasteId"
-    });
-    models.Taste.belongsTo(Drink);
-    Drink.hasMany(models.Aroma, {
-      foreignKey: "aromaId"
-    });
-    models.Aroma.belongsTo(Drink);
+    Drink.hasMany(models.Taste);
+    Drink.hasMany(models.Aroma);
   };
   return Drink;
 };
