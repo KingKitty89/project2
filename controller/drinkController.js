@@ -11,14 +11,19 @@ router.get("/whiskey", (req, res) => {
     db.Taste.findAll({}).then(tasteData => {
       const aromas = JSON.parse(JSON.stringify(aromaData));
       const tastes = JSON.parse(JSON.stringify(tasteData));
-      console.log(aromas, tastes);
       res.render("whiskey", { aromas, tastes });
     });
   });
 });
 
 router.get("/wine", (req, res) => {
-  res.render("wine");
+  db.Aroma.findAll({}).then(aromaData => {
+    db.Taste.findAll({}).then(tasteData => {
+      const aromas = JSON.parse(JSON.stringify(aromaData));
+      const tastes = JSON.parse(JSON.stringify(tasteData));
+      res.render("wine", { aromas, tastes });
+    });
+  });
 });
 
 router.get("/api/whiskey", (req, res) => {
