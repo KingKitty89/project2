@@ -12,7 +12,6 @@ router.get("/whiskey", (req, res) => {
 
 router.get("/wine", (req, res) => {
   res.render("wine");
-  console.log("help!");
 });
 
 router.get("/api/whiskey/:aroma", (req, res) => {

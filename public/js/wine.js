@@ -3,21 +3,25 @@ $(document).ready(() => {
   const taste = $("#taste");
   const aroma = $("#aroma");
 
-  whiskeyForm.on("submit", event => {
+  $("select").on("change", function(event) {
     event.preventDefault();
+    console.log("==========================");
+    console.log("TASTE AND AROMA");
+    console.log(
+      $(this)
+        .val()
+        .trim()
+    );
     const userInput = {
       tasteInput: taste.val().trim(),
       aromaInput: aroma.val().trim()
     };
-    if (!userInput.taste || !userInput.aroma) {
+    if (!userInput.tasteInput || !userInput.aromaInput) {
       return;
     }
-
-    getNotes(userInput.taste, userInput.aroma);
-    tasteInput.val("");
-    aromaInput.val("");
+    getNotes(userInput.tasteInput, userInput.aromaInput);
   });
-
+  //the below needs work!
   function getNotes(taste, aroma) {
     $.get("/api/wine/:aroma", {
       aroma: aroma,
