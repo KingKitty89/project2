@@ -14,6 +14,7 @@ router.get("/wine", (req, res) => {
   res.render("wine");
 });
 
+
 router.get("/api/whiskey/:aroma", (req, res) => {
   db.Drink.findAll({
     where: {
@@ -25,6 +26,7 @@ router.get("/api/whiskey/:aroma", (req, res) => {
     res.json(results);
   });
 });
+
 
 router.get("/api/wine/:aroma", (req, res) => {
   db.Drink.findAll({
