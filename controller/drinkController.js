@@ -61,46 +61,4 @@ router.get("/api/wine/:taste", (req, res) => {
     res.json(results);
   });
 });
-// db.Drink.findAll({
-//   where: {
-//     type: req.params.type,
-//     aroma: req.params.aroma
-//   },
-//     include: [
-//       {
-//         model: db.Aroma,
-//         attributes: ["name"],
-//         required: true
-//       }
-//     ]
-//   })
-//     .then(dbDrink => {
-//       res.json(dbDrink);
-//     })
-//     .catch(err => {
-//       res.json(err);
-//     });
-// });
-
-// router.get("/api/drink/:taste", (req, res) => {
-//   db.Drink.findAll({
-//     where: {
-//       type: req.params.type,
-//       taste: req.params.taste
-//     },
-//     include: [
-//       {
-//         model: db.Taste,
-//         attributes: ["name"],
-//         required: true
-//       }
-//     ]
-//   })
-//     .then(dbDrink => {
-//       res.json(dbDrink);
-//     })
-//     .catch(err => {
-//       res.json(err);
-//     });
-// });
 module.exports = router;
