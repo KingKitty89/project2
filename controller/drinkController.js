@@ -14,7 +14,7 @@ router.get("/wine", (req, res) => {
   res.render("wine");
 });
 
-router.get("/api/bourbon/:aroma", (req, res) => {
+router.get("/api/drinks/:aroma", (req, res) => {
   db.Bourbon.findAll({
     where: {
       aroma: req.params.aroma
@@ -35,7 +35,7 @@ router.get("/api/bourbon/:aroma", (req, res) => {
     });
 });
 
-router.get("/api/bourbon/:taste", (req, res) => {
+router.get("/api/drinks/:taste", (req, res) => {
   db.Bourbon.findAll({
     where: {
       taste: req.params.taste
