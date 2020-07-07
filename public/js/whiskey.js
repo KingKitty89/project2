@@ -2,20 +2,26 @@ $(document).ready(() => {
   // Getting references to our form and inputs
   const taste = $("#taste");
   const aroma = $("#aroma");
-
-  whiskeyForm.on("submit", event => {
+  const form = $("#form");
+  console.log("==========================");
+  console.log("TASTE AND AROMA");
+  console.log(taste.val().trim(), aroma.val().trim());
+  form.on("submit", event => {
     event.preventDefault();
     const userInput = {
       tasteInput: taste.val().trim(),
       aromaInput: aroma.val().trim()
     };
-    if (!userInput.taste || !userInput.aroma) {
+    if (!userInput.tasteInput || !userInput.aromaInput) {
       return;
     }
-
-    getNotes(userInput.taste, userInput.aroma);
+    getNotes(userInput.tasteInput, userInput.aromaInput);
     tasteInput.val("");
     aromaInput.val("");
+    console.log("•••••••••••••••••••••••••••••");
+    console.log("TASTE AND AROMA 2");
+    console.log(taste.val().trim(), aroma.val().trim());
+    console.log("why");
   });
 
   function getNotes(taste, aroma) {
