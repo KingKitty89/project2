@@ -19,7 +19,7 @@ module.exports = (sequelize, DataTypes) => {
     }
   );
   Aroma.associate = function(models) {
-    Aroma.belongsTo(models.Drink);
+    Aroma.belongsToMany(models.Drink, { through: models.DrinkAroma });
   };
   return Aroma;
 };

@@ -19,7 +19,7 @@ module.exports = (sequelize, DataTypes) => {
     }
   );
   Taste.associate = function(models) {
-    Taste.belongsTo(models.Drink);
+    Taste.belongsToMany(models.Drink, { through: models.DrinkTaste });
   };
   return Taste;
 };
