@@ -7,7 +7,14 @@ router.get("/", (req, res) => {
 });
 
 router.get("/whiskey", (req, res) => {
-  res.render("whiskey");
+  db.Aroma.findAll({}).then(aromaData => {
+    db.Taste.findAll({}).then(tasteData => {
+      const aromas = JSON.parse(JSON.stringify(aromaData));
+      const tastes = JSON.parse(JSON.stringify(tasteData));
+      console.log(aromas, tastes);
+      res.render("whiskey", { aromas, tastes });
+    });
+  });
 });
 
 router.get("/wine", (req, res) => {
