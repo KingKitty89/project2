@@ -3,6 +3,8 @@ USE spirit_db;
 INSERT INTO drinks (type, name, brand, taste, aroma, price) 
 VALUES ("Bourbon", "Kentucky Straight Bourbon", "Maker's Mark", "sweet", "wood", 29.0);
 
+INSERT INTO drinks (type, name, brand, taste, aroma, price) 
+VALUES ("Bourbon", "Japanese Whisky", "Nikka", "Smokey", "wood", 63.0);
 
 -- INSERT INTO tastes (name, description)
 -- VALUES ("sweet", "Caramel and vanilla heavy with subtle hints of orchard fruits.");
