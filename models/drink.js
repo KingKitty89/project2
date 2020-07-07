@@ -13,8 +13,6 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.STRING,
       name: DataTypes.STRING,
       brand: DataTypes.STRING,
-      taste: DataTypes.STRING,
-      aroma: DataTypes.STRING,
       price: DataTypes.DECIMAL
     },
     {
@@ -24,8 +22,8 @@ module.exports = (sequelize, DataTypes) => {
   );
 
   Drink.associate = function(models) {
-    Drink.hasMany(models.Taste);
-    Drink.hasMany(models.Aroma);
+    Drink.belongsToMany(models.Taste, { through: models.DrinkTaste });
+    Drink.belongsToMany(models.Aroma, { through: models.DrinkAroma });
   };
   return Drink;
 };
