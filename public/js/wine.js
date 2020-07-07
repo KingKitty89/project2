@@ -21,7 +21,6 @@ $(document).ready(() => {
     }
     getNotes(userInput.tasteInput, userInput.aromaInput);
   });
-
   function getNotes(taste, aroma) {
     $.get("/api/wine/:aroma", {
       aroma: aroma,
