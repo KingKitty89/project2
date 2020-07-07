@@ -21,14 +21,13 @@ $(document).ready(() => {
     }
     getNotes(userInput.tasteInput, userInput.aromaInput);
   });
-
   function getNotes(taste, aroma) {
     $.get("/api/wine/:aroma", {
       aroma: aroma,
-      taste: taste
+      tasteInput: taste
     })
       .then(() => {
-        window.location.replace("/wine-results");
+        res.redirect("/wine-results");
         // If there's an error, log the error
       })
       .catch(err => {
