@@ -118,6 +118,7 @@ background-color: rgba(246, 210, 2, 0.849);
 .btn-primary:focus,
 .btn-primary:link    {
     background-color: goldenrod;
+    border-color: white;
 }
 
 #whiskeylink    {
@@ -181,4 +182,5 @@ footer  {
 
 .card    {
     margin: 25px;
+    padding: 25px
 }
