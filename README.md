@@ -45,8 +45,6 @@ Step 3: Run the app using the command below in your terminal:
 
 ![Demo](./public/assets/simplysomm3.png)
 
-![Demo](./public/asset/simplysomm4.png)
-
 ![Demo](./public/assets/simplysomm5.png)
 
 ## **Test**
