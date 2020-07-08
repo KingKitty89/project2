@@ -1,5 +1,6 @@
 const db = require("../models");
 const express = require("express");
+const aroma = require("../models/aroma");
 const router = express.Router();
 
 router.get("/", (req, res) => {
@@ -70,12 +71,15 @@ router.post("/api/whiskey/:aroma", (req, res) => {
 });
 
 router.post("/api/wine/:aroma", (req, res) => {
+  console.log(req.params.DrinkId);
   db.DrinkAroma.findOne({
     where: {
+      // DrinkId: req.params.drink,
       AromaId: req.params.aroma
     },
     include: [db.Drink]
   }).then(result => {
+    console.log(aroma, "aroma");
     const wineArr = [];
     wineArr.push(result.dataValues.Drink.dataValues);
     res.json({ wine: wineArr });
