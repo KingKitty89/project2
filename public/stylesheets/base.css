@@ -90,7 +90,9 @@ button:hover {
     width: 80%;
     height: 100%;
     display: flex;
+    flex-direction: column;
     justify-content: center;
+    align-items: center;
 }
 
 .search-title   {
@@ -110,4 +112,9 @@ label   {
 
 .submit {
     margin: 15px;
+}
+
+.drink-info {
+    display: block;
+    opacity: 1;
 }

@@ -3,7 +3,7 @@ $(document).ready(() => {
   const taste = $("#taste");
   const aroma = $("#aroma");
 
-  $("select").on("change", function(event) {
+  $(".submit").on("click", function(event) {
     event.preventDefault();
     console.log("==========================");
     console.log("TASTE AND AROMA");
@@ -21,17 +21,35 @@ $(document).ready(() => {
     }
     getNotes(userInput.tasteInput, userInput.aromaInput);
   });
-  function getNotes(taste, aroma) {
-    $.get("/api/wine/:aroma", {
-      aroma: aroma,
-      tasteInput: taste
-    })
-      .then(results => {
-        console.log(results);
-        // If there's an error, log the error
-      })
-      .catch(err => {
-        console.log(err);
-      });
-  }
 });
+
+function getNotes(taste, aroma) {
+  console.log(taste, aroma);
+  $.ajax("/api/wine/" + aroma, {
+    type: "POST"
+  }).then(result => {
+    displayDrinkCard(result);
+  });
+}
+
+function displayDrinkCard({ wine }) {
+  //const wine = _wine;
+  console.log(wine);
+  const templates = [];
+  wine.forEach(drink => {
+    templates.push(`
+      <div class="card" style="width: 18rem;">
+        <img class="card-img-top" src="./assets/jug.jpg" alt="Card image cap" />
+        <div class="card-body">
+          <h5 class="card-title">${drink.name}</h5>
+          <p class="card-text">
+              ${drink.brand}<br>
+              Price: $${drink.price}
+          </p>
+          <a href="#" class="btn btn-primary">Go somewhere</a>
+        </div>
+      </div>
+    `);
+  });
+  $(".drink-info").html(templates);
+}
