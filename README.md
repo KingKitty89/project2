@@ -1,5 +1,4 @@
-<h1 align="center">**Simply-Somm**</ht>
-
+## **Simply-Somm**
 ------
 <img src="https://img.shields.io/badge/-made%20with%20love-brightgreen" >
 
@@ -9,15 +8,15 @@
 
 ## **Description**
 
-An app that allows a user to have a sommelier at their fingertips. Simply Somm is an app that gives a user the ability to view and search for wines and whiskeys based on certain taste and aroma profiles. If a user is looking for a wine that is sweet smelling on the nose and sweet tasting the app will query a database of wines and then display wines that correlate to those paramters. Then the user will be able to see a selection of wines that fit their taste and aroma needs. If the user is searching for a whiskey they will do the same procdure entering a taste and aroma they would like and then whiskeys that fit those search parameters will be displayed for the user.
+Simply Somm is an app that allows a user to essentially have their very own sommelier at their fingertips. This app gives a user the ability to view and search for wines and whiskeys based on certain taste and aroma criteria. If a user is looking for a wine that is floral on the nose and sweet tasting the app will query a database of wines and then display wines that correlate to those taste and aroma paramters. Then the user will be able to see a selection of wines that fit their taste and aroma wants and needs. If the user is searching for a whiskey they will do the same procedure entering a taste and aroma they would like and then whiskeys that fit those search parameters will be displayed for the user. The app uses a Sequelize database that works with the use of two through tables. The database is populated with a variety of wines and whiskeys that correlate with certain taste and aroma profiles.
 
 
 ## **Installation**
-Step 1. Git clone the repository from this link into your terminal: https://github.com/KingKitty89/project2
-
-    npm install
+Step 1. In the terminal do a git clone using the repository from this link: https://github.com/KingKitty89/project2
 
 Step 2. Install all the required dependences using the command below:
+
+    npm install
 
 Step 3: Run the app using the command below in your terminal:
 
@@ -38,59 +37,57 @@ Step 3: Run the app using the command below in your terminal:
 * Heroku`
 * GitHub
 
-I created the following HTML routes: 
+## **Screenshots**
 
-* GET "/" returns the index.html file.
+![Demo](./public/assets/simplysomm1.png)
 
-![Demo](./assets/notetaker1.png)
+![Demo](./public/assets/simplysomm2.png)
 
-* GET /notes returns the notes.html file.
+![Demo](./public/assets/simplysomm3.png)
 
-![Demo](./assets/notetaker2.png)
+![Demo](./public/asset/simplysomm4.png)
 
-I created the following API routes: 
+![Demo](./public/assets/simplysomm5.png)
 
-* GET /api/notes reads the db.json file and returns all saved notes.
-
-* POST /api/notes receives a new note, saves it, and adds it to the db.json file.
-
-![Demo](./assets/notetaker4.png)
-
-* DELETE /api/notes/:id receives a query paramter which contains an id of a note to delete from the sidebar when the trash can button is clicked. This in turn also removes the note from the db.json.
-
-![Demo](./assets/notetaker5.png)
+## **Test**
 
 <p align="center">
-  <img width="460" height="300" src="./assets/notetaker6.gif">
+  <img width="460" height="300" src="./public/assets/simplysomm.gif">
 </p>
 
-
-
-## **Installation**
-
-npm i
+<h3 align ="center"><a href ="https://drive.google.com/file/d/1iA0Aje3EYA1zYWYrAjhc99MG7F2aJyHg/view">Live Demo</a></h3>
 
 ## **Usage**
 
-This application will help users easily keep track of information by allowing them to take persistent notes and be able to call on those notes when needed. 
+This application allows a user to search for wines and whiskeys based on the taste and aroma profile they want. 
 
 ## **Contributors/Contact**
 
-* #### **Name:** Jessica Helft (@KingKitty89)
-* #### **Email:** [jessicahelft@gmail.com](jessicahelft@gmail.com)
-* #### **LinkedIn:** [LinkedIn](https://www.linkedin.com/in/jessicahelft)
+#### **Jessica Helft** 
+* [@KingKitty89](https://github.com/KingKitty89)
+* [Portfolio](https://kingkitty89.github.io/ResponsivePortfolio/)
+* [jessicahelft@gmail.com](jessicahelft@gmail.com)
+* [LinkedIn](https://www.linkedin.com/in/jessicahelft)
+
 ------
 
+#### **Alex Taggart**  
+* [@AlexTagg392](https://github.com/AlexTagg392)
+* [Portfolio](https://alextagg392.github.io/Homework_Responsiveness-Portfolio/)
+* [christag392@gmail.com](christag392@gmail.com)
+* [LinkedIn](https://www.linkedin.com/in/alex-taggart-9750221a7/)
+
+------
+
+#### **Morgan Splawn** 
+* [@msplawn](https://github.com/msplawn)
+* [Portfolio](https://msplawn.github.io/bootstrap-about-me/)
+* [mmsplawn@gmail.com](mmsplawn@gmail.com)
+* [LinkedIn](https://www.linkedin.com/in/morgan-splawn-72979a1a9/)
 
 
-@msplawn
-@AlexTagg392
 
-## **Tests**
 
-![Demo](./assets/notetaker3.png)
-
-<h3 align ="center"><a href ="https://drive.google.com/file/d/1htQpWXPep6DhwCx8mFfBmdVzPCxewhSO/view">Live Demo</a></h3>
 
 
 
