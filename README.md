@@ -8,13 +8,13 @@
 
 ## **Description**
 
-Simply Somm is an app that allows a user to essentially have their very own sommelier at their fingertips. This app gives a user the ability to view and search for wines and whiskeys based on certain taste and aroma criteria. If a user is looking for a wine that is floral on the nose and sweet tasting the app will query a database of wines and then display wines that correlate to those taste and aroma paramters. Then the user will be able to see a selection of wines that fit their taste and aroma wants and needs. If the user is searching for a whiskey they will do the same procedure entering a taste and aroma they would like and then whiskeys that fit those search parameters will be displayed for the user. The app uses a Sequelize database that works with the use of two through tables. The database is populated with a variety of wines and whiskeys that correlate with certain taste and aroma profiles.
+Simply Somm is an app that allows a user to essentially have their very own sommelier at their fingertips. This app gives a user the ability to view and search for wines and whiskeys based on certain taste and aroma criteria. If a user is looking for a wine that is floral on the nose and sweet tasting the app will query a database of wines and then display wines that correlate to those taste and aroma parameters. Then the user will be able to see a selection of wines that fit their taste and aroma wants and needs. If the user is searching for a whiskey they will do the same procedure entering a taste and aroma they would like and then whiskeys that fit those search parameters will be displayed for the user. The app uses a Sequelize database that works with the use of two through tables. The database is populated with a variety of wines and whiskeys that correlate with certain taste and aroma profiles.
 
 
 ## **Installation**
 Step 1. In the terminal do a git clone using the repository from this link: https://github.com/KingKitty89/project2
 
-Step 2. Install all the required dependences using the command below:
+Step 2. Install all the required dependencies using the command below:
 
     npm install
 
