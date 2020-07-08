@@ -48,19 +48,24 @@ router.get("/api/wine", (req, res) => {
   });
 });
 
-router.get("/api/whiskey/:aroma", (req, res) => {
-  db.Aroma.findOne({
+router.post("/api/whiskey/:aroma", (req, res) => {
+  console.log(req.params.aroma);
+  db.DrinkAroma.findOne({
     where: {
-      name: req.params.aroma
+      AromaId: req.params.aroma
     },
     include: [db.Drink]
   }).then(result => {
-    console.log(result);
-    console.log(result.getDrinks);
-    result.getDrinks().then(data => {
-      const drinks = JSON.parse(JSON.stringify(data));
-      res.json(drinks);
-    });
+    console.log("---------------------------------");
+    const whiskeyArr = [];
+    whiskeyArr.push(result.dataValues.Drink.dataValues);
+    console.log(whiskeyArr[0].name);
+    res.render("whiskey-results", { whiskey: whiskeyArr });
+    // console.log(result.getDrinks);
+    // result.getDrinks().then(data => {
+    //   const drinks = JSON.parse(JSON.stringify(data));
+    //   res.json(drinks);
+    // });
   });
 });
 
@@ -127,6 +132,18 @@ router.post("/api/taste", (req, res) => {
     res.json(results);
   });
 });
+router.post("/api/whiskey", (req, res) => {
+  db.Taste.create(req.body).then(results => {
+    res.json(results);
+  });
+  console.log(req.body);
+});
+router.post("/api/wine", (req, res) => {
+  db.Taste.create(req.body).then(results => {
+    res.json(results);
+  });
+});
+
 router.put("/api/drink/:id/taste", (req, res) => {
   db.Drink.findOne({
     where: { id: req.params.id }

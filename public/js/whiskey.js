@@ -21,17 +21,13 @@ $(document).ready(() => {
     }
     getNotes(userInput.tasteInput, userInput.aromaInput);
   });
-  function getNotes(taste, aroma) {
-    $.get("/api/whiskey/:aroma", {
-      aroma: aroma,
-      taste: taste
-    })
-      .then(() => {
-        window.location.replace("/whiskey-results");
-        // If there's an error, log the error
-      })
-      .catch(err => {
-        console.log(err);
-      });
-  }
 });
+
+function getNotes(taste, aroma) {
+  console.log(taste, aroma);
+  $.ajax("/api/whiskey/" + aroma, {
+    type: "POST"
+  }).then(result => {
+    console.log(result);
+  });
+}

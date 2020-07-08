@@ -7,8 +7,18 @@
         <img src="./assets/whiskey.jpg" id="whiskeyimg" />
         <div id="search-container">
             <h2 class="search-title">We think you would enjoy these bottles!</h2>
-            {{#each drinks}}
-            
+            {{#each whiskey}}
+                <div class="card" style="width: 18rem;">
+              <img class="card-img-top" src="..." alt="Card image cap" />
+              <div class="card-body">
+                <h5 class="card-title">{{ this.name }}</h5>
+                <p class="card-text">
+                    {{ brand }}
+                    {{ price }}
+                </p>
+                <a href="#" class="btn btn-primary">Go somewhere</a>
+              </div>
+            </div>
             {{/each}}
         </div>
     </div>
