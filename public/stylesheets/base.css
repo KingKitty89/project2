@@ -35,6 +35,8 @@ width: 100%;
 /* object-fit: contain; */
 height: 100%;
 z-index: 0;
+max-height: 835px;
+
 }
 
 #wine    {
@@ -47,6 +49,7 @@ z-index: 0;
     width: 100%;
     z-index: 0;
     height: 100%;
+    max-height: 835px;
 }
 
 #wine-landing, #whiskey-landing   {
@@ -60,6 +63,7 @@ form    {
     width: 40%;
     opacity: 1;
     margin: 40px;
+    font-size: 25px;
 }
 
 
@@ -81,6 +85,12 @@ button  {
 
 button:hover {
     background-color: black;
+}
+
+.submit {
+    background-color: goldenrod;
+    border-color: white;
+    padding: 15px;
 }
 
 #whiskeylink    {
