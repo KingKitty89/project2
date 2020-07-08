@@ -7,9 +7,6 @@ body    {
     background-color: black;
 }
 
-/* .nav    {
-    color: white;
-} */
 .navbar-text {
     display: block;
     width: 100%;
@@ -32,11 +29,9 @@ display: flex;
 
 #whiskeyimg    {
 width: 100%;
-/* object-fit: contain; */
 height: 100%;
 z-index: 0;
 max-height: 835px;
-
 }
 
 #wine    {
@@ -45,7 +40,6 @@ max-height: 835px;
 }
 
 #wineimg    {
-    /* object-fit: contain; */
     width: 100%;
     z-index: 0;
     height: 100%;
