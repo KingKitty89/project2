@@ -1,5 +1,5 @@
-<nav class="navbar navbar-light bg-light">
-    <a class="navbar-brand text-center" href="/" id="nav">Simply Somm</a>
+<nav class="navbar">
+    <a class="navbar-text text-center" href="/" id="nav">Simply Somm</a>
 </nav>
 
 <container>
@@ -7,10 +7,10 @@
         <img src="./assets/whiskey.jpg" id="whiskeyimg" />
         <div id="search-container">
             <form>
-            <h2 class="search-title">Find a Whiskey</h2>
+                <h2 class="search-title">Find a Whiskey</h2>
                 <div class="form-group">
-                    <small class="form-text search-criteria">Find a whiskey by flavour profile, aroma
-                        profile, or both!</small>
+                    <small class="form-text search-criteria">Find a whiskey by flavour and aroma
+                        profile!</small>
                     <label for="taste">Taste</label>
                     <select class="form-control" id="taste">
                         {{#each tastes}}
@@ -37,4 +37,4 @@
         </div>
     </div>
 </container>
-  <script type="text/javascript" src="/js/whiskey.js"></script>
+<script type="text/javascript" src="/js/whiskey.js"></script>

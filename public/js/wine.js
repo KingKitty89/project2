@@ -39,7 +39,7 @@ function displayDrinkCard({ wine }) {
   wine.forEach(drink => {
     templates.push(`
       <div class="card" style="width: 18rem;">
-        <img class="card-img-top" src="./assets/jug.jpg" alt="Card image cap" />
+        <img class="card-img-top" src="./assets/wine-bottle.jpg" alt="Card image cap" />
         <div class="card-body">
           <h5 class="card-title">${drink.name}</h5>
           <p class="card-text">
