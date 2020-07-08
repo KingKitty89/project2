@@ -3,7 +3,7 @@ $(document).ready(() => {
   const taste = $("#taste");
   const aroma = $("#aroma");
 
-  $("select").on("change", function(event) {
+  $(".submit").on("click", function(event) {
     event.preventDefault();
     console.log("==========================");
     console.log("TASTE AND AROMA");
@@ -28,6 +28,28 @@ function getNotes(taste, aroma) {
   $.ajax("/api/whiskey/" + aroma, {
     type: "POST"
   }).then(result => {
-    console.log(result);
+    displayDrinkCard(result);
   });
+}
+
+function displayDrinkCard({ whiskey }) {
+  //const whiskey = _whiskey;
+  console.log(whiskey);
+  const templates = [];
+  whiskey.forEach(drink => {
+    templates.push(`
+      <div class="card" style="width: 18rem;">
+        <img class="card-img-top" src="./assets/jug.jpg" alt="Card image cap" />
+        <div class="card-body">
+          <h5 class="card-title">${drink.name}</h5>
+          <p class="card-text">
+              ${drink.brand}<br>
+              Price: $${drink.price}
+          </p>
+          <a href="#" class="btn btn-primary">Go somewhere</a>
+        </div>
+      </div>
+    `);
+  });
+  $(".drink-info").html(templates);
 }
