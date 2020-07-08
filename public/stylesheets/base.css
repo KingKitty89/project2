@@ -113,7 +113,10 @@ button:hover {
 background-color: rgba(246, 210, 2, 0.849);
 }
 
-.btn-primary:visited    {
+.btn-primary:visited,
+.btn-primary:active,
+.btn-primary:focus,
+.btn-primary:link    {
     background-color: goldenrod;
 }
 
@@ -174,4 +177,8 @@ footer  {
     text-align: center;
     color: white;
     padding: 10px;
+}
+
+.card    {
+    margin: 25px;
 }

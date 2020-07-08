@@ -49,9 +49,9 @@ router.get("/api/wine", (req, res) => {
   });
 });
 
-router.post("/api/whiskey/:aroma", (req, res) => {
+router.get("/api/whiskey/:aroma", (req, res) => {
   console.log(req.params.aroma);
-  db.DrinkAroma.findOne({
+  db.DrinkAroma.findAll({
     where: {
       AromaId: req.params.aroma
     },
@@ -61,17 +61,16 @@ router.post("/api/whiskey/:aroma", (req, res) => {
         type: "whiskey"
       }
     }
-  }).then(result => {
+  }).then(results => {
     console.log(aroma, "aroma");
-    const whiskeyArr = [];
-    whiskeyArr.push(result.dataValues.Drink.dataValues);
+    const whiskeyArr = JSON.parse(JSON.stringify(results));
     res.json({ whiskey: whiskeyArr });
   });
 });
 
-router.post("/api/wine/:aroma", (req, res) => {
+router.get("/api/wine/:aroma", (req, res) => {
   console.log(req.params.aroma);
-  db.DrinkAroma.findOne({
+  db.DrinkAroma.findAll({
     where: {
       AromaId: req.params.aroma
     },
@@ -81,16 +80,15 @@ router.post("/api/wine/:aroma", (req, res) => {
         type: "wine"
       }
     }
-  }).then(result => {
+  }).then(results => {
     console.log(aroma, "aroma");
-    const wineArr = [];
-    wineArr.push(result.dataValues.Drink.dataValues);
+    const wineArr = JSON.parse(JSON.stringify(results));
     res.json({ wine: wineArr });
   });
 });
 
 router.get("/api/whiskey/:taste", (req, res) => {
-  db.Taste.findOne({
+  db.Taste.findAll({
     where: {
       TasteId: req.params.taste
     },
@@ -100,16 +98,15 @@ router.get("/api/whiskey/:taste", (req, res) => {
         type: "whiskey"
       }
     }
-  }).then(result => {
+  }).then(results => {
     console.log(aroma, "aroma");
-    const whiskeyArr = [];
-    whiskeyArr.push(result.dataValues.Drink.dataValues);
+    const whiskeyArr = JSON.parse(JSON.stringify(results));
     res.json({ whiskey: whiskeyArr });
   });
 });
 
 router.get("/api/wine/:taste", (req, res) => {
-  db.Taste.findOne({
+  db.Taste.findAll({
     where: {
       TasteId: req.params.taste
     },
@@ -119,10 +116,9 @@ router.get("/api/wine/:taste", (req, res) => {
         type: "wine"
       }
     }
-  }).then(result => {
+  }).then(results => {
     console.log(taste, "taste");
-    const wineArr = [];
-    wineArr.push(result.dataValues.Drink.dataValues);
+    const wineArr = JSON.parse(JSON.stringify(results));
     res.json({ wine: wineArr });
   });
 });

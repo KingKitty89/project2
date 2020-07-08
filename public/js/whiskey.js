@@ -26,7 +26,7 @@ $(document).ready(() => {
 function getNotes(taste, aroma) {
   console.log(taste, aroma);
   $.ajax("/api/whiskey/" + aroma, {
-    type: "POST"
+    type: "GET"
   }).then(result => {
     displayDrinkCard(result);
   });
@@ -41,10 +41,10 @@ function displayDrinkCard({ whiskey }) {
       <div class="card" style="width: 18rem;">
         <img class="card-img-top" src="./assets/whiskey-bottle.jpg" alt="Card image cap" />
         <div class="card-body">
-          <h5 class="card-title">${drink.name}</h5>
+          <h5 class="card-title">${drink.Drink.brand}</h5>
           <p class="card-text">
-              ${drink.brand}<br>
-              Price: $${drink.price}
+              ${drink.Drink.name}<br>
+              Price: $${drink.Drink.price}
           </p>
           <a href="#" class="btn btn-primary">Click to Shop!</a>
         </div>
