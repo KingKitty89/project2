@@ -50,34 +50,37 @@ router.get("/api/wine", (req, res) => {
 });
 
 router.post("/api/whiskey/:aroma", (req, res) => {
-  //console.log(req.params.aroma);
+  console.log(req.params.aroma);
   db.DrinkAroma.findOne({
     where: {
       AromaId: req.params.aroma
     },
-    include: [db.Drink]
+    include: {
+      model: db.Drink,
+      where: {
+        type: "whiskey"
+      }
+    }
   }).then(result => {
-    console.log("---------------------------------");
+    console.log(aroma, "aroma");
     const whiskeyArr = [];
     whiskeyArr.push(result.dataValues.Drink.dataValues);
-    console.log(whiskeyArr[0].name);
     res.json({ whiskey: whiskeyArr });
-    // console.log(result.getDrinks);
-    // result.getDrinks().then(data => {
-    //   const drinks = JSON.parse(JSON.stringify(data));
-    //   res.json(drinks);
-    // });
   });
 });
 
 router.post("/api/wine/:aroma", (req, res) => {
-  console.log(req.params.DrinkId);
+  console.log(req.params.aroma);
   db.DrinkAroma.findOne({
     where: {
-      // DrinkId: req.params.drink,
       AromaId: req.params.aroma
     },
-    include: [db.Drink]
+    include: {
+      model: db.Drink,
+      where: {
+        type: "wine"
+      }
+    }
   }).then(result => {
     console.log(aroma, "aroma");
     const wineArr = [];
