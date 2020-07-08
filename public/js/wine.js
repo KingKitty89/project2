@@ -3,15 +3,8 @@ $(document).ready(() => {
   const taste = $("#taste");
   const aroma = $("#aroma");
 
-  $(".submit").on("click", function(event) {
+  $(".submit").on("click", event => {
     event.preventDefault();
-    console.log("==========================");
-    console.log("TASTE AND AROMA");
-    console.log(
-      $(this)
-        .val()
-        .trim()
-    );
     const userInput = {
       tasteInput: taste.val().trim(),
       aromaInput: aroma.val().trim()
@@ -33,7 +26,6 @@ function getNotes(taste, aroma) {
 }
 
 function displayDrinkCard({ wine }) {
-  //const wine = _wine;
   console.log(wine);
   const templates = [];
   wine.forEach(drink => {
