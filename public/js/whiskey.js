@@ -46,7 +46,7 @@ function displayDrinkCard({ whiskey }) {
               ${drink.brand}<br>
               Price: $${drink.price}
           </p>
-          <a href="#" class="btn btn-primary">Go somewhere</a>
+          <a href="#" class="btn btn-primary">Click to Shop!</a>
         </div>
       </div>
     `);

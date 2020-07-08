@@ -56,7 +56,23 @@ max-height: 835px;
     width: 100%;
     text-align: center;
     height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
+
+#wine-landing   {
+background-image: url("../assets/wine.jpeg");
+min-height: 800px;
+background-size: cover;
+}
+
+#whiskey-landing   {
+    background-image: url("../assets/whiskey.jpg");
+    min-height: 800px;
+    background-size: cover;
+}
+
 
 form    {
     color: white;
@@ -108,16 +124,16 @@ button:hover {
 #search-container   {
     background-color: black;
     opacity: .8;
-    position: absolute;
     top: 5%;
     left: 10%;
     z-index: 50;
     width: 80%;
-    height: 90%;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    margin-bottom: 50px;
+    padding: 20px;
 }
 
 .search-title   {
@@ -145,7 +161,6 @@ label   {
 }
 
 footer  {
-    
     bottom: 0;
     left: 47%;
     text-align: center;
