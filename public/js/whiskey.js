@@ -27,7 +27,7 @@ function getNotes(taste, aroma) {
   console.log(taste, aroma);
   $.ajax("/api/whiskey/" + aroma, {
     type: "POST"
-  }).then((result) => {
+  }).then(result => {
     console.log(result);
   });
 }
