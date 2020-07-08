@@ -26,8 +26,8 @@ $(document).ready(() => {
       aroma: aroma,
       tasteInput: taste
     })
-      .then(() => {
-        res.redirect("/wine-results");
+      .then(results => {
+        console.log(results);
         // If there's an error, log the error
       })
       .catch(err => {
