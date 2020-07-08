@@ -92,32 +92,38 @@ router.post("/api/wine/:aroma", (req, res) => {
 router.get("/api/whiskey/:taste", (req, res) => {
   db.Taste.findOne({
     where: {
-      name: req.params.aroma
+      TasteId: req.params.taste
     },
-    include: [db.Drink]
+    include: {
+      model: db.Drink,
+      where: {
+        type: "whiskey"
+      }
+    }
   }).then(result => {
-    console.log(result);
-    console.log(result.getDrinks);
-    result.getDrinks().then(data => {
-      const drinks = JSON.parse(JSON.stringify(data));
-      res.json(drinks);
-    });
+    console.log(aroma, "aroma");
+    const whiskeyArr = [];
+    whiskeyArr.push(result.dataValues.Drink.dataValues);
+    res.json({ whiskey: whiskeyArr });
   });
 });
 
 router.get("/api/wine/:taste", (req, res) => {
   db.Taste.findOne({
     where: {
-      name: req.params.aroma
+      TasteId: req.params.taste
     },
-    include: [db.Drink]
+    include: {
+      model: db.Drink,
+      where: {
+        type: "wine"
+      }
+    }
   }).then(result => {
-    console.log(result);
-    console.log(result.getDrinks);
-    result.getDrinks().then(data => {
-      const drinks = JSON.parse(JSON.stringify(data));
-      res.json(drinks);
-    });
+    console.log(taste, "taste");
+    const wineArr = [];
+    wineArr.push(result.dataValues.Drink.dataValues);
+    res.json({ wine: wineArr });
   });
 });
 
