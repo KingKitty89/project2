@@ -103,10 +103,18 @@ button:hover {
     background-color: black;
 }
 
-.submit {
+.btn-primary {
     background-color: goldenrod;
     border-color: white;
     padding: 15px;
+}
+
+.btn-primary:hover    {
+background-color: rgba(246, 210, 2, 0.849);
+}
+
+.btn-primary:visited    {
+    background-color: goldenrod;
 }
 
 #whiskeylink    {
